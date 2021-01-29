@@ -10,13 +10,17 @@ function Router(routes) {
     }
 };
 
+// Router - менеджер маршрутов
+// routes: маршруты приложения
+// rootElem: корневой элемент, куда будет рендериться html
 Router.prototype = {
     routes: null,
     rootElem: null,
     constructor(routes) {
         this.routes = routes;
-        this.rootElem = rootElem;
+        this.rootElem = document.getElementById('app');
     },
+    // создаем случателя события hashchange окна
     init() {
         const r = this.routes;
         (function(scope, r) {
@@ -26,6 +30,7 @@ Router.prototype = {
         })(this, r);
         hasChanged(this, r);
     },
+    // загрузка маршрута или переход на дефолтный
     hasChanged(scope, r) {
         if (window.location.hash.length) {
             for (let i = 0; i < r.length; i++) {
