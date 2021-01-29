@@ -20,15 +20,18 @@ Router.prototype = {
         this.routes = routes;
         this.rootElem = document.getElementById('app');
     },
-    // создаем случателя события hashchange окна
-    init() {
-        const r = this.routes;
-        (function(scope, r) {
-            window.addEventListener('hashchange', () => {
-                scope.hasChanged(scope, r);
-            });
-        })(this, r);
-        hasChanged(this, r);
+    goToRoute(htmlName) {
+        (function(scope) {
+            const url = 'views/' + htmlName;
+            const xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState === 4 && this.status === 200) {
+                    scope.rootElem.innerHTML = this.responseText;
+                }
+            };
+            xhttp.open('GET', url, true);
+            xhttp.send();
+        })(this);
     },
     // загрузка маршрута или переход на дефолтный
     hasChanged(scope, r) {
@@ -48,17 +51,14 @@ Router.prototype = {
             }
         }
     },
-    goToRoute(htmlName) {
-        (function(scope) {
-            const url = 'views/' + htmlName;
-            const xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-                if (this.readyState === 4 && this.status === 200) {
-                    scope.rootElem.innerHTML = this.responseText;
-                }
-            };
-            xhttp.open('GET', url, true);
-            xhttp.send();
-        })(this);
+    // создаем случателя события hashchange окна
+    init() {
+        const r = this.routes;
+        (function(scope, r) {
+            window.addEventListener('hashchange', () => {
+                scope.hasChanged(scope, r);
+            });
+        })(this, r);
+        hasChanged(this, r);
     }
 };
