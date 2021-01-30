@@ -2,12 +2,12 @@
 // name: имя маршрута
 // htmlName: является ли имя html при загрузке маршрута
 // defaultRoute: true, eсли путь маршрута по умолчанию 
-function Route (name, htmlName, defaultRoute) {
+function Route (name, htmlName, cssName, jsName, defaultRoute) {
     try {
-        if (!name && !htmlName) {
+        if (!name && !htmlName && !cssName && !jsName) {
             throw new Error("Error: name and htmlName params are mandatories!");
         } 
-        this.constructor(name, htmlName, defaultRoute);
+        this.constructor(name, htmlName, cssName, jsName, defaultRoute);
     } catch (e) {
         console.error(e);
     }
