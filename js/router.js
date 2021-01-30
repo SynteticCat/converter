@@ -45,13 +45,13 @@ Router.prototype = {
             xhttp.onreadystatechange = function() {
                 if (this.readyState === 4 && this.status === 200) {
                     // add css for html
-                    addCssToPage(route);
+                    scope.addCssToPage(route);
 
                     // add html
                     scope.rootElem.innerHTML = this.responseText;
 
                     // add js for html
-                    addJavaScriptToPage(route);
+                    scope.addJavaScriptToPage(route);
                 }
             };
             xhttp.open('GET', url, true);
