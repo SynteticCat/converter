@@ -16,10 +16,14 @@ function Route (name, htmlName, defaultRoute) {
 Route.prototype = {
     name: null,
     htmlName: null,
+    cssName: null,
+    jsName: null,
     default: null,
-    constructor(name, htmlName, defaultRoute) {
+    constructor(name, htmlName, cssName, jsName, defaultRoute) {
         this.name = name;
         this.htmlName = htmlName;
+        this.cssName = cssName;
+        this.jsName = jsName;
         this.default = defaultRoute;
     },
     isActiveRoute(hashedPath) {
