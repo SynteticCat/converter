@@ -20,9 +20,9 @@ Router.prototype = {
         this.routes = routes;
         this.rootElem = document.getElementById('app');
     },
-    goToRoute(htmlName) {
+    goToRoute(route) {
         (function(scope) {
-            const url = 'views/' + htmlName;
+            const url = 'pages/' + route.name + '/' + route.htmlName;
             const xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState === 4 && this.status === 200) {
@@ -39,14 +39,14 @@ Router.prototype = {
             for (let i = 0; i < r.length; i++) {
                 const route = r[i];
                 if (route.isActiveRoute(window.location.hash.substr(1))) {
-                    scope.goToRoute(route.htmlName);
+                    scope.goToRoute(route);
                 }
             }
         } else {
             for (let i = 0; i < r.length; i++) {
                 const route = r[i];
                 if (route.default) {
-                    scope.goToRoute(route.htmlName);
+                    scope.goToRoute(route);
                 }
             }
         }
