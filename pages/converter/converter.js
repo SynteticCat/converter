@@ -48,7 +48,7 @@ const updateConverter = () => {
     updateField();
 }
 
-myCurrencyInput.onkeypress = () => updateField();
+myCurrencyInput.oninput = () => updateField();
 
 myCurrencyToolbarRUR.onclick = () => {
     if (changeType !== changeTypes.RURtoUSD) {
