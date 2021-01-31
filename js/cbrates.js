@@ -18,8 +18,8 @@ CentralBankExchangeRates.prototype = {
                     const valuteCharCode = valute.querySelector('CharCode').textContent;
                     
                     if (valuteCharCode === "USD") {
-                        const rateUsdString = valute.querySelector('Value').textContent
-                        this.rateUsd = parseFloat(rateUsdString).toFixed(2);
+                        const rateUsdString = valute.querySelector('Value').textContent;
+                        this.rateUsd = parseFloat(parseFloat(rateUsdString.replace(',', '.')).toFixed(2));
                         break;
                     }
                 }
