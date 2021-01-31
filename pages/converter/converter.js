@@ -14,7 +14,7 @@ const convertCurrencyToolbarUSD = document.getElementsByClassName('js-convert-cu
 
 const updateField = () => {
     const value = myCurrencyInput.value;
-    if (value = '') {
+    if (value !== '') {
         let exchangeValue;
 
         if (changeType === changeTypes.USDtoRUR) {
@@ -24,6 +24,8 @@ const updateField = () => {
         } 
         
         convertCurrencyInput.value = exchangeValue;
+    } else {
+        convertCurrencyInput.value = '';
     }
 };
 
