@@ -52,28 +52,28 @@ myCurrencyInput.oninput = () => updateField();
 
 myCurrencyToolbarRUR.onclick = () => {
     if (changeType !== changeTypes.RURtoUSD) {
-        changeType === changeTypes.RURtoUSD;
-        updateConverter
+        changeType = changeTypes.RURtoUSD;
+        updateConverter();
     }
 };
 
 myCurrencyToolbarUSD.onclick = () => {
     if (changeType !== changeTypes.USDtoRUR) {
-        changeType === changeTypes.USDtoRUR;
+        changeType = changeTypes.USDtoRUR;
         updateConverter();
     }
 };
 
 convertCurrencyToolbarUSD.onclick = () => {
     if (changeType !== changeTypes.RURtoUSD) {
-        changeType === changeTypes.RURtoUSD;
+        changeType = changeTypes.RURtoUSD;
         updateConverter();
     }
 };
 
 convertCurrencyToolbarRUR.onclick = () => {
     if (changeType !== changeTypes.USDtoRUR) {
-        changeType === changeTypes.USDtoRUR;
+        changeType = changeTypes.USDtoRUR;
         updateConverter();
     }
 };
