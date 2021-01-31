@@ -65,6 +65,7 @@ Router.prototype = {
                 const route = r[i];
                 if (route.isActiveRoute(window.location.hash.substr(1))) {
                     scope.goToRoute(route);
+                    break;
                 }
             }
         } else {
@@ -72,6 +73,7 @@ Router.prototype = {
                 const route = r[i];
                 if (route.default) {
                     scope.goToRoute(route);
+                    break;
                 }
             }
         }

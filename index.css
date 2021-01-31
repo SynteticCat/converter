@@ -1,9 +1,71 @@
-/* Navigation */
-
-.navigation {
-
+@font-face {
+    font-family: "Futura";
+    src: 'futura-pt-book.ttf';
 }
 
-.navigation__item {
+* {
+    box-sizing: border-box;
+}
 
+body {
+    margin: 0;
+    font-family: 'Futura', 'Arial', 'sans-serif';
+    font-weight: 700;
+}
+
+a, a:active, a:hover {
+    text-decoration: none;
+    color: #000;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+input[type="text"], 
+input[type="text"]:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+/* Header */
+
+header {
+    width: 100%;
+    font-size: 18px;
+    height: 56px;
+    background-color: #484074;
+    color: #fff;
+}
+
+.container {
+    padding: 0 116px;
+}
+
+.converter-header {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.converter-header__title {
+    text-transform: uppercase;
+    margin-right: 45px;
+}
+
+.converter-header__menu ul {
+    display: flex;
+}
+
+.converter-header__menu ul li a {
+    color: #fff;
+}
+
+.converter-header__menu ul li:first-child {
+    margin-right: 45px;
 }

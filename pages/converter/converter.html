@@ -1,38 +1,35 @@
-<div class="currency-converter-panel">
-    <div class="my-currency">
-        <div class="my-currency__title">У меня есть</div>
+<div class="converter-wrapper">
 
-        <div class="my-currency__toolbar">
-            <ul>
-                <li>RUR</li>
-                <li>USD</li>
-            </ul>
+    <div class="converter-panel">
+        <div class="currency my-currency">
+            <div class="currency-toolbar">
+                <ul>
+                    <li class="js-my-currency-toolbar__item active">RUR</li>
+                    <li class="js-my-currency-toolbar__item">USD</li>
+                </ul>
+            </div>
+    
+            <div class="currency-field">
+                <input type="text" placeholder="00000" class="js-my-currency__input"/>
+            </div>
         </div>
-
-        <div class="my-currency__field">
-            <input class="my-currency__value" type="number" value="5000"/>
-            <div class="my-currency__course">1 USD = 0.8269 EUR</div>
-        </div>
-
-    </div>
-
-    <div class="exchange-currency-types">
-        &harr;
-    </div>
-
-    <div class="convertible-currency">
-        <div class="convertible-currency__title">Хочу приобрести</div>
-
-        <div class="convertible-currency__toolbar">
-            <ul>
-                <li>RUR</li>
-                <li>USD</li>
-            </ul>
-        </div>
-
-        <div class="convertible-currency__field">
-            <input class="convertible-currency__value" type="number" value="5000"/>
-            <div class="convertible-currency__course">76185.4262</div>
+    
+        <div class="currency convert-currency">
+            <div class="currency-toolbar">
+                <ul>
+                    <li class="js-convert-currency-toolbar__item">RUR</li>
+                    <li class="js-convert-currency-toolbar__item active">USD</li>
+                </ul>
+            </div>
+    
+            <div class="currency-field">
+                <input type="text" placeholder="00000" class="js-convert-currency__input"/>
+            </div>
         </div>
     </div>
+
+    <div class="converter-picture">
+        <img src="./assets/money.png" alt="">
+    </div>
+    
 </div>
