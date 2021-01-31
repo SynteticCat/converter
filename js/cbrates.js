@@ -13,8 +13,8 @@ CentralBankExchangeRates.prototype = {
             if (request.status === 200) {
                 const valutes = request.responseXML.querySelectorAll('Valute');
 
-                for (let valute in valutes) {
-                    const valuteCharCode = valute.querySelector('CharCode').textContent;
+                for (let key in valutes) {
+                    const valuteCharCode = valutes[key].querySelector('CharCode').textContent;
                     
                     if (valuteCharCode === "USD") {
                         const rateUsdString = valute.querySelector('Value').textContent
