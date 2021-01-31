@@ -11,7 +11,7 @@ CentralBankExchangeRates.prototype = {
             request.send(null);
 
             if (request.status === 200) {
-                const valutes = request.querySelectorAll('Valute');
+                const valutes = request.responseXML.querySelectorAll('Valute');
 
                 for (let valute in valutes) {
                     const valuteCharCode = valute.querySelector('CharCode').textContent;
