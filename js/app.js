@@ -1,7 +1,7 @@
-// window.API = {};
-
 window.onload = () => {
-    // new CentralBankExchangeRates('https://www.cbr-xml-daily.ru/daily.xml');
+    window.API = {
+        cbrates: new CentralBankExchangeRates()  // get central bank rates
+    };
 
     new Router([
         new Route('converter', 'converter.html', 'converter.css', 'converter.js', true),
