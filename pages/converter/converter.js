@@ -29,15 +29,15 @@ const updateField = () => {
 
 const updateToolbar = () => {
     if (changeType === changeTypes.USDtoRUR) {
-        myCurrencyToolbarRUR.classList.remove('active');
-        myCurrencyToolbarUSD.classList.add('active');
-        convertCurrencyToolbarRUR.classList.add('active');
-        convertCurrencyToolbarUSD.classList.remove('active');
+        myCurrencyToolbarRUR[0].classList.remove('active');
+        myCurrencyToolbarUSD[0].classList.add('active');
+        convertCurrencyToolbarRUR[0].classList.add('active');
+        convertCurrencyToolbarUSD[0].classList.remove('active');
     } else {
-        myCurrencyToolbarRUR.classList.add('active');
-        myCurrencyToolbarUSD.classList.remove('active');
-        convertCurrencyToolbarRUR.classList.remove('active');
-        convertCurrencyToolbarUSD.classList.add('active');
+        myCurrencyToolbarRUR[0].classList.add('active');
+        myCurrencyToolbarUSD[0].classList.remove('active');
+        convertCurrencyToolbarRUR[0].classList.remove('active');
+        convertCurrencyToolbarUSD[0].classList.add('active');
     }
 }
 
