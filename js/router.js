@@ -16,28 +16,44 @@ function Router(routes) {
 Router.prototype = {
     routes: null,
     rootElem: null,
+
     constructor(routes) {
         this.routes = routes;
         this.rootElem = document.getElementById('app');
     },
-    addCssToPage(route) {
-        // проверка на содержание такой линки
-        const header = document.getElementsByTagName('head')[0];
-        const newLink = document.createElement('link');
-        newLink.rel = 'stylesheet';
-        newLink.type = 'text/css';
-        newLink.href = 'pages/' + route.name + '/' + route.cssName;
 
-        header.append(newLink);
+    // создаем слушателя события hashchange окна
+    init() {
+        const r = this.routes;
+        this.hashChanged(this, r);
+        (function(scope, r) {
+            window.addEventListener('hashchange', () => {
+                scope.hashChanged(scope, r);
+            });
+        })(this, r);
     },
-    addJavaScriptToPage(route) {
-        // проверка на содержание такого скрипта
-        const body = document.getElementsByTagName('body')[0];
-        const newScript = document.createElement('script');
-        newScript.src = 'pages/' + route.name + '/' + route.jsName;
 
-        body.append(newScript);
+    // загрузка маршрута или переход на дефолтный
+    hashChanged(scope, r) {
+        if (window.location.hash.length) {
+            for (let i = 0; i < r.length; i++) {
+                const route = r[i];
+                if (route.isActiveRoute(window.location.hash.substr(1))) {
+                    scope.goToRoute(route);
+                    break;
+                }
+            }
+        } else {
+            for (let i = 0; i < r.length; i++) {
+                const route = r[i];
+                if (route.default) {
+                    scope.goToRoute(route);
+                    break;
+                }
+            }
+        }
     },
+
     goToRoute(route) {
         (function(scope) {
             const url = 'pages/' + route.name + '/' + route.htmlName;
@@ -58,34 +74,22 @@ Router.prototype = {
             xhttp.send();
         })(this);
     },
-    // загрузка маршрута или переход на дефолтный
-    hasChanged(scope, r) {
-        if (window.location.hash.length) {
-            for (let i = 0; i < r.length; i++) {
-                const route = r[i];
-                if (route.isActiveRoute(window.location.hash.substr(1))) {
-                    scope.goToRoute(route);
-                    break;
-                }
-            }
-        } else {
-            for (let i = 0; i < r.length; i++) {
-                const route = r[i];
-                if (route.default) {
-                    scope.goToRoute(route);
-                    break;
-                }
-            }
-        }
+
+    addCssToPage(route) {
+        const header = document.getElementsByTagName('head')[0];
+        const newLink = document.createElement('link');
+        newLink.rel = 'stylesheet';
+        newLink.type = 'text/css';
+        newLink.href = 'pages/' + route.name + '/' + route.cssName;
+
+        header.append(newLink);
     },
-    // создаем слушателя события hashchange окна
-    init() {
-        const r = this.routes;
-        (function(scope, r) {
-            window.addEventListener('hashchange', () => {
-                scope.hasChanged(scope, r);
-            });
-        })(this, r);
-        hasChanged(this, r);
+
+    addJavaScriptToPage(route) {
+        const body = document.getElementsByTagName('body')[0];
+        const newScript = document.createElement('script');
+        newScript.src = 'pages/' + route.name + '/' + route.jsName;
+
+        body.append(newScript);
     }
 };
