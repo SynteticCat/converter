@@ -4,13 +4,13 @@ const changeTypes = {
 };
 let changeType = changeTypes.USDtoRUR;
 
-const myCurrencyInput = document.getElementsByClassName('js-my-currency__input');
-const convertCurrencyInput = document.getElementsByClassName('js-convert-currency__input');
+const myCurrencyInput = document.getElementsByClassName('js-my-currency__input')[0];
+const convertCurrencyInput = document.getElementsByClassName('js-convert-currency__input')[0];
 
-const myCurrencyToolbarRUR = document.getElementsByClassName('js-my-currency-toolbar__RUR');
-const myCurrencyToolbarUSD = document.getElementsByClassName('js-my-currency-toolbar__USD');
-const convertCurrencyToolbarRUR = document.getElementsByClassName('js-convert-currency-toolbar__RUR');
-const convertCurrencyToolbarUSD = document.getElementsByClassName('js-convert-currency-toolbar__USD');
+const myCurrencyToolbarRUR = document.getElementsByClassName('js-my-currency-toolbar__RUR')[0];
+const myCurrencyToolbarUSD = document.getElementsByClassName('js-my-currency-toolbar__USD')[0];
+const convertCurrencyToolbarRUR = document.getElementsByClassName('js-convert-currency-toolbar__RUR')[0];
+const convertCurrencyToolbarUSD = document.getElementsByClassName('js-convert-currency-toolbar__USD')[0];
 
 const updateField = () => {
     const value = myCurrencyInput.value;
@@ -29,15 +29,15 @@ const updateField = () => {
 
 const updateToolbar = () => {
     if (changeType === changeTypes.USDtoRUR) {
-        myCurrencyToolbarRUR[0].classList.remove('active');
-        myCurrencyToolbarUSD[0].classList.add('active');
-        convertCurrencyToolbarRUR[0].classList.add('active');
-        convertCurrencyToolbarUSD[0].classList.remove('active');
+        myCurrencyToolbarRUR.classList.remove('active');
+        myCurrencyToolbarUSD.classList.add('active');
+        convertCurrencyToolbarRUR.classList.add('active');
+        convertCurrencyToolbarUSD.classList.remove('active');
     } else {
-        myCurrencyToolbarRUR[0].classList.add('active');
-        myCurrencyToolbarUSD[0].classList.remove('active');
-        convertCurrencyToolbarRUR[0].classList.remove('active');
-        convertCurrencyToolbarUSD[0].classList.add('active');
+        myCurrencyToolbarRUR.classList.add('active');
+        myCurrencyToolbarUSD.classList.remove('active');
+        convertCurrencyToolbarRUR.classList.remove('active');
+        convertCurrencyToolbarUSD.classList.add('active');
     }
 }
 
