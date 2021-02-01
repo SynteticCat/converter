@@ -15,6 +15,7 @@ const action = actions.buy;
 const buyCurrencyBtn = document.querySelector('.js-buy-currency');
 const sellCurrencyBtn = document.querySelector('.js-sell-currency');
 const userValue = document.querySelector('.js-currency-value');
+userValue.value = 100;
 
 const initLocalStorage = () => {
     if (!localStorage.getItem('banks')) {
