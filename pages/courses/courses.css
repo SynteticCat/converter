@@ -1,17 +1,86 @@
 .bank-options {
     display: flex;
     align-items: center;
+    margin-top: 45px;
 }
 
-.courses-currency-field {
-    padding: 0 44px;
+.courses-currency-field {    
+    padding: 12px 44px;
     border-radius: 11px;
     width: 227px;
+    height: auto;
     margin-left: 60px;
     font-size: 14px;
     font-weight: bold;
+    margin-top: 0;
+}
+
+.courses-currency-field input{
+    font-size: 14px;
 }
 
 .bank-options-info {
     margin-left: 15px;
+}
+
+.bank-list {
+    width: 744px;
+    margin: 83px 0 38px 0;
+    font-size: 14px;
+}
+
+.bank-list-rows {
+    margin-top: 20px;
+}
+
+.bank-list-title,
+.bank-list-row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.bank-list-row {
+    background-color: #F0F8F0;
+    padding: 14px;
+    border-top: 1px solid #F1E9E9;
+    border-bottom: 1px solid #F1E9E9;
+}
+
+.bank-title-attr__name {
+    margin-left: 43px;
+}
+
+.bank-row-attr__name {
+    margin-left: 14px;
+}
+
+.bank-title-attr__name,
+.bank-row-attr__name {
+    width: 300px
+}
+
+.bank-title-attr__course,
+.bank-row-attr__course {
+    width: 80px;
+    margin-left: 100px;
+}
+
+.bank-title-attr__sum,
+.bank-row-attr__sum {
+    margin-left: 20px;
+}
+
+.bank-row-attr__save {
+    width: 15px;
+    height: 15px;
+    border: 1px solid #0e8327;
+    background-color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.bank-row-attr__save.saved {
+    background-color: #0e8327;
+    border: none;
 }
