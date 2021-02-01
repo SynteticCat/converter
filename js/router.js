@@ -78,7 +78,7 @@ Router.prototype = {
     addCssToPage(route) {
         const links = document.querySelectorAll('link');
         for (let key in links) {
-            if (links[key].href.includes(route.cssName)) {
+            if (links[key].href?.includes(route.cssName)) {
                 return;
             }
         }
@@ -95,7 +95,7 @@ Router.prototype = {
     addJavaScriptToPage(route) {
         const scripts = document.querySelectorAll('script');
         for (let key in scripts) {
-            if (scripts[key].src.includes(route.jsName)) {
+            if (scripts[key].src?.includes(route.jsName)) {
                 return;
             }
         }
