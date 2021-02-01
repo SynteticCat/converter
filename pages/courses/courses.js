@@ -12,6 +12,7 @@ let banks = [
 const actions = { buy: 'buy', sell: 'sell' };
 let action = actions.buy;
 
+const bankListRows = document.querySelector('.js-bank-list-rows');
 const buyCurrencyBtn = document.querySelector('.js-buy-currency');
 const sellCurrencyBtn = document.querySelector('.js-sell-currency');
 const userValue = document.querySelector('.js-currency-value');
@@ -55,8 +56,6 @@ const updateCoursesToolbar = () => {
 };
 
 const updateBanksList = () => {
-    const bankListRows = document.querySelector('.js-bank-list-rows');
-
     // filter by localStorage
     const banksFirst = banks.filter(a => atLocalStorage(a.id));
     banksFirst.filter((a, b) => a.id - b.id);
@@ -131,6 +130,7 @@ sellCurrencyBtn.onclick = () => {
 };
 
 userValue.oninput = () => {
+    bankListRows.innerHTML = '';
     updateCourses();
 };
 
