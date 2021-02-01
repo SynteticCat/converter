@@ -1,73 +1,17 @@
-/* Courses container */
-
-.courses-container {
-
+.bank-options {
+    display: flex;
+    align-items: center;
 }
 
-/* Exchange courses actions */
-
-.exchange-courses-actions {
-
+.courses-currency-field {
+    padding: 0 44px;
+    border-radius: 11px;
+    width: 227px;
+    margin-left: 60px;
+    font-size: 14px;
+    font-weight: bold;
 }
 
-.exchange-action-buy {
-
-}
-
-.exchange-action-sell {
-
-}
-
-.exchange-action-field {
-
-}
-
-.exchange-action-currency {
-
-}
-
-/* Courses info wrapper */
-
-.courses-info-wrapper {
-
-}
-
-/* COurses info title */
-
-.courses-info__title {
-
-}
-
-.title__bank {
-
-}
-
-.title__course {
-
-}
-
-.title__sum {
-
-}
-
-/* Courses info list */
-
-.courses-info__list {
-
-}
-
-.courses-info__list__item {
-    
-}
-
-.item__bank {
-
-}
-
-.item__course {
-
-}
-
-.item__sum {
-
+.bank-options-info {
+    margin-left: 15px;
 }

@@ -1,45 +1,12 @@
-<div class="courses-container">
-    <div class="exchange-courses-actions">
-        <div class="exchange-action-buy">Купить</div>
-        <div class="exchange-action-sell">Продать</div>
-        <input class="exchange-action-field" type="number" value="100" />
-        <select class="exchange-action-currency" size="1">
-            <option value="USD за RUB" selected>USD за RUB</option>
-            <option value="RUB за USD">RUB за USD</option>
-        </select>
-    </div>
+<div class="converter-wrapper">
 
-    <div class="courses-info-wrapper">
-        <div class="courses-info__title">
-            <div class="title__bank">Банк</div>
-            <div class="title__course">Курс</div>
-            <div class="title__sum">Сумма</div>
+    <div class="bank-options">
+        <div class="btn js-buy-currency">Купить</div>
+        <div class="btn js-sell-currency">Продать</div>
+        <div class="courses-currency-field currency-field">
+            <input type="text" placeholder="00000" class="js-currency-value"/>
         </div>
-
-        <ul class="courses-info__list">
-            <li class="courses-info__list__item">
-                <div class="item__bank">ООО Банк Групп 1</div>
-                <div class="item__course">76.20</div>
-                <div class="item__sum">7620</div>
-            </li>
-
-            <li class="courses-info__list__item">
-                <div class="item__bank">ООО Банк Групп 2</div>
-                <div class="item__course">76.30</div>
-                <div class="item__sum">7630</div>
-            </li>
-
-            <li class="courses-info__list__item">
-                <div class="item__bank">ООО Банк Групп 3</div>
-                <div class="item__course">76.40</div>
-                <div class="item__sum">7640</div>
-            </li>
-
-            <li class="courses-info__list__item">
-                <div class="item__bank">ООО Банк Групп 4</div>
-                <div class="item__course">76.50</div>
-                <div class="item__sum">7650</div>
-            </li>
-        </ul>
+        <div class="bank-options-info">Валюта: USD</div>
     </div>
+    
 </div>

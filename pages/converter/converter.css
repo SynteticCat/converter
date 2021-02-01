@@ -17,47 +17,10 @@
     margin-top: 45px;
 }
 
-/* Currency Toolbar */
-
 .currency-toolbar ul {
     display: flex;
 }
 
-.currency-toolbar ul li {
-    background-color: #F0F8F0;
-    color: #000;
-    border-radius: 11px;
-    padding: 14px 27px;
-    font-size: 14px;
-    user-select: none;
-    cursor: pointer;
-}
-
-.currency-toolbar ul li:nth-child(n + 2) {
-    margin-left: 10px;
-}
-
-.currency-toolbar ul li.active {
-    background-color: #7EC17E;
-    color: #fff;
-}
-
-/* Currency Field */
-
-.currency-field {
-    width: 536px;
-    height: 161px;
-    border: 0.5px solid #7EC17E;
-    border-radius: 17px;
-    display: flex;
-    align-items: center;
-    padding: 0 44px;
-    margin-top: 12px;
-}
-
-.currency-field input {
-    color: #000;
-    font-size: 48px;
-    font-weight: bold;
-    width: 100%;
+.convert-currency__input {
+    color: #969494;
 }
