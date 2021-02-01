@@ -1,4 +1,4 @@
-const banks = [
+let banks = [
     { id: '1', name: "Банк 1", sale: 75.20, buy: 75.30 },
     { id: '2', name: "Банк 2", sale: 75.30, buy: 75.45 },
     { id: '3', name: "Банк 3", sale: 75.15, buy: 74.35 },
@@ -44,10 +44,6 @@ const removeFromLocalStorage = bankID => {
 };
 
 initLocalStorage();
-
-const getUserValue = () => {
-    return userValue ? parseFloat(parseFloat(userValue.value).toFixed(2)) : null;
-};
 
 const updateCoursesToolbar = () => {
     if (action === actions.buy) {
@@ -102,9 +98,9 @@ const updateBanksList = () => {
         const newRowSum = document.createElement('div');
         newRowSum.classList.add('bank-row-attr__course');
         if (action === actions.buy) {
-            newRowSum.innerText = bank.buy * getUserValue();
+            newRowSum.innerText = parseFloat((bank.buy * parseFloat(userValue.value)).toFixed(2));
         } else {
-            newRowSum.innerText = bank.sell * getUserValue();
+            newRowSum.innerText = parseFloat((bank.sell * parseFloat(userValue.value)).toFixed(2));
         }
 
         newRow.append(newRowSave, newRowName, newRowCourse, newRowSum);
@@ -112,5 +108,23 @@ const updateBanksList = () => {
     })
 };
 
-updateCoursesToolbar();
-updateBanksList();
+const updateCourses = () => {
+    updateCoursesToolbar();
+    updateBanksList();
+};
+
+buyCurrencyBtn.onclick = () => {
+    if (action !== actions.buy) {
+        action = actions.buy;
+        updateCourses();
+    }
+};
+
+sellCurrencyBtn.onclick = () => {
+    if (action !== actions.sell) {
+        action = actions.sell;
+        updateCourses();
+    }
+};
+
+updateCourses();
