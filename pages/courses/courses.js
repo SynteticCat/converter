@@ -10,12 +10,11 @@ let banks = [
 ];
 
 const actions = { buy: 'buy', sell: 'sell' };
-const action = actions.buy;
+let action = actions.buy;
 
 const buyCurrencyBtn = document.querySelector('.js-buy-currency');
 const sellCurrencyBtn = document.querySelector('.js-sell-currency');
 const userValue = document.querySelector('.js-currency-value');
-userValue.value = 100;
 
 const initLocalStorage = () => {
     if (!localStorage.getItem('banks')) {
@@ -96,11 +95,15 @@ const updateBanksList = () => {
         }
 
         const newRowSum = document.createElement('div');
-        newRowSum.classList.add('bank-row-attr__course');
-        if (action === actions.buy) {
-            newRowSum.innerText = parseFloat((bank.buy * parseFloat(userValue.value)).toFixed(2));
+        newRowSum.classList.add('bank-row-attr__sum');
+        if (userValue.value === '') {
+            newRowSum.innerText = 0;
         } else {
-            newRowSum.innerText = parseFloat((bank.sell * parseFloat(userValue.value)).toFixed(2));
+            if (action === actions.buy) {
+                newRowSum.innerText = parseFloat((bank.buy * parseFloat(userValue.value)).toFixed(2));
+            } else {
+                newRowSum.innerText = parseFloat((bank.sell * parseFloat(userValue.value)).toFixed(2));
+            }
         }
 
         newRow.append(newRowSave, newRowName, newRowCourse, newRowSum);
@@ -125,6 +128,10 @@ sellCurrencyBtn.onclick = () => {
         action = actions.sell;
         updateCourses();
     }
+};
+
+userValue.oninput = () => {
+    updateCourses();
 };
 
 updateCourses();
