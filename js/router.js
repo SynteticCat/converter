@@ -76,6 +76,13 @@ Router.prototype = {
     },
 
     addCssToPage(route) {
+        const links = document.querySelectorAll('link');
+        for (let key in links) {
+            if (links[key].href.includes(route.cssName)) {
+                return;
+            }
+        }
+
         const header = document.getElementsByTagName('head')[0];
         const newLink = document.createElement('link');
         newLink.rel = 'stylesheet';
@@ -86,6 +93,13 @@ Router.prototype = {
     },
 
     addJavaScriptToPage(route) {
+        const scripts = document.querySelectorAll('script');
+        for (let key in scripts) {
+            if (scripts[key].src.includes(route.jsName)) {
+                return;
+            }
+        }
+
         const body = document.getElementsByTagName('body')[0];
         const newScript = document.createElement('script');
         newScript.src = 'pages/' + route.name + '/' + route.jsName;
