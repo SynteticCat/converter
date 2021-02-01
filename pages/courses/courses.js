@@ -23,19 +23,19 @@ const initLocalStorage = () => {
 };
 
 const atLocalStorage = bankID => {
-    return localStorage.getItem('banks').includes(bankID);
+    return localStorage.getItem('banks').split(',').includes(bankID);
 };
 
 const addToLocalStorage = bankID => {
     if (!atLocalStorage(bankID)) {
-        const newBanks = [...localStorage.getItem('banks'), bankID];
+        const newBanks = [...localStorage.getItem('banks').split(','), bankID];
         localStorage.setItem('banks', newBanks);
     }
 };
 
 const removeFromLocalStorage = bankID => {
     if (atLocalStorage(bankID)) {
-        const newBanks = localStorage.getItem('banks').filter(
+        const newBanks = localStorage.getItem('banks').split(',').filter(
             bank => bank.id !== bankID
         );
         localStorage.setItem('banks', newBanks);
