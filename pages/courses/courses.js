@@ -48,7 +48,7 @@ const getUserValue = () => {
     return userValue ? parseFloat(parseFloat(userValue.value).toFixed(2)) : null;
 };
 
-const updateToolbar = () => {
+const updateCoursesToolbar = () => {
     if (action === actions.buy) {
         sellCurrencyBtn.classList.remove('active');
         buyCurrencyBtn.classList.add('active');
@@ -105,5 +105,5 @@ const updateBanksList = () => {
     })
 };
 
-updateToolbar();
+updateCoursesToolbar();
 updateBanksList();
