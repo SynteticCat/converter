@@ -1,12 +1,12 @@
 const banks = [
-    { id: 1, name: "Банк 1", sale: 75.20, buy: 75.30 },
-    { id: 2, name: "Банк 2", sale: 75.30, buy: 75.45 },
-    { id: 3, name: "Банк 3", sale: 75.15, buy: 74.35 },
-    { id: 4, name: "Банк 4", sale: 75.25, buy: 75.35 },
-    { id: 5, name: "Банк 5", sale: 75.20, buy: 75.45 },
-    { id: 6, name: "Банк 6", sale: 75.15, buy: 75.30 },
-    { id: 7, name: "Банк 7", sale: 75.10, buy: 75.35 },
-    { id: 8, name: "Банк 8", sale: 75.20, buy: 75.30 },
+    { id: '1', name: "Банк 1", sale: 75.20, buy: 75.30 },
+    { id: '2', name: "Банк 2", sale: 75.30, buy: 75.45 },
+    { id: '3', name: "Банк 3", sale: 75.15, buy: 74.35 },
+    { id: '4', name: "Банк 4", sale: 75.25, buy: 75.35 },
+    { id: '5', name: "Банк 5", sale: 75.20, buy: 75.45 },
+    { id: '6', name: "Банк 6", sale: 75.15, buy: 75.30 },
+    { id: '7', name: "Банк 7", sale: 75.10, buy: 75.35 },
+    { id: '8', name: "Банк 8", sale: 75.20, buy: 75.30 },
 ];
 
 const actions = { buy: 'buy', sell: 'sell' };
