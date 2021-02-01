@@ -37,7 +37,7 @@ const addToLocalStorage = bankID => {
 const removeFromLocalStorage = bankID => {
     if (atLocalStorage(bankID)) {
         const newBanks = localStorage.getItem('banks').split(',').filter(
-            bank => bank.id !== bankID
+            id => id !== bankID
         );
         localStorage.setItem('banks', newBanks);
     }
@@ -61,6 +61,12 @@ const updateCoursesToolbar = () => {
 
 const updateBanksList = () => {
     const bankListRows = document.querySelector('.js-bank-list-rows');
+
+    // filter by localStorage
+    const banksFirst = banks.filter(a => atLocalStorage(a.id));
+    banksFirst.filter((a, b) => a.id - b.id);
+    const banksSecond = banks.filter(a => !atLocalStorage(a.id));
+    banks = [...banksFirst, ...banksSecond];
 
     banks.forEach(bank => {
         const newRow = document.createElement('div');
