@@ -71,7 +71,7 @@ const updateBanksList = () => {
             newRowSave.classList.add('saved');
         }
         newRowSave.onclick = () => {
-            if (!newRowSave.classList.includes('saved')) {
+            if (!newRowSave.classList.value.includes('saved')) {
                 newRowSave.classList.add('saved');
                 addToLocalStorage(bank.id);
             } else {
